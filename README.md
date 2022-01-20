@@ -1,5 +1,6 @@
 
 
+
 **Page Rank**
 
 An application that returns the page rankings (position of a URL) for a website using Google or Bing. 
@@ -14,8 +15,13 @@ https://webscraping101.s3.ap-southeast-2.amazonaws.com/bing/Page01.html
 I've created this application to demonstrate the use of Clean Architecture in modern software development.
 
 Requirements:
-Return the page numbers where a URL appears in Google or Bing. If a url is not found, return zero
-Keyboard is just to demonstrate form bindings in Angular. It's just for visual purposes.
+
+ - Return the page numbers where a URL appears in Google or Bing. If multiple positions are found, return the result as a comma separated string ie 1,2,3
+ - Return 0 if no position is found
+ - Keyboard is just to demonstrate form bindings in Angular. It's just for visual purposes
+
+
+
 
 Requirements:
 - Node v16
