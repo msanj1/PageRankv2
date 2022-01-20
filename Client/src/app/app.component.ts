@@ -22,7 +22,7 @@ export class AppComponent {
 
   constructor(formBuilder: FormBuilder, private pageRankService: PageRankingDataServiceService, private snackbar: MatSnackBar) {
     this.model = formBuilder.group({
-      url: [null, [Validators.required, Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
+      url: ['https://www.library.uq.edu.au', [Validators.required, Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
       keyboard: ['Online Title Search', [Validators.required]],
       searchEngineType: ['google', [Validators.required]]
     });
