@@ -34,7 +34,7 @@ Some notes
 - I've included 2 implementations for the webscraping portion of the project. A Regex and a HAP (Html Agility Pack) parser. The default parsers can be changed in SearchResultParserFactory.
 - The client has been configured to send requests to http://localhost:5000 (Kestrel's default HTTP port). This can be changed in /client/src/environments/environment.ts.
 
-Some points that I would have liked to improve
+Some points that I would like to improve
 - Upgrade the backend to .NET 6
 - Upgrade the frontend to Angular 13
 - Further refine the UI
