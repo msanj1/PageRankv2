@@ -25,6 +25,8 @@ Some notes
 - The client has been configured to send requests to http://localhost:5000 (Kestrel's default HTTP port). This can be changed in /client/src/environments/environment.ts.
 
 Some points that I would have liked to improve
+- Upgrade the backend to .NET 6
+- Upgrade the frontend to Angular 13
 - Further refine the UI
 - Add Docker support
 - Add better url validations
