@@ -1,16 +1,18 @@
 
 
-
 **Page Rank**
 
 An application that returns the page rankings (position of a URL) for a website using Google or Bing. 
 
 Please note that searches are not performed against live Google/Bing pages. They are searched against saved pages that reside on AWS. The pages reside in the following prefixes
-https://webscraping101.s3.ap-southeast-2.amazonaws.com/google
-https://webscraping101.s3.ap-southeast-2.amazonaws.com/bing
-can be accessed as per below (append a Page[01-05].html) to the urls
-https://webscraping101.s3.ap-southeast-2.amazonaws.com/google/Page01.html
-https://webscraping101.s3.ap-southeast-2.amazonaws.com/bing/Page01.html
+
+ - https://webscraping101.s3.ap-southeast-2.amazonaws.com/google
+ - https://webscraping101.s3.ap-southeast-2.amazonaws.com/bing
+
+And can be accessed as per below (append a Page[01-05].html) to the URLs
+
+ - https://webscraping101.s3.ap-southeast-2.amazonaws.com/google/Page01.html
+ - https://webscraping101.s3.ap-southeast-2.amazonaws.com/bing/Page01.html
 
 I've created this application to demonstrate the use of Clean Architecture in modern software development.
 
@@ -19,8 +21,7 @@ Requirements:
  - Return the page numbers where a URL appears in Google or Bing. If multiple positions are found, return the result as a comma separated string ie 1,2,3
  - Return 0 if no position is found
  - Keyboard is just to demonstrate form bindings in Angular. It's just for visual purposes
-
-
+ - Searches are limited to 5 pages
 
 
 Requirements:
