@@ -1,0 +1,27 @@
+.url-field, .keyboard-field{
+    width: 500px;
+}
+
+.search-engine-field{
+    width: 250px;
+}
+
+.keyboard-field, .search-engine-field, .url-field{
+    .mat-form-field{
+        width: inherit;
+    }
+}
+
+.search-btn{
+    width: 100%;
+}
+
+.card:hover{
+    cursor:default !important; 
+}
+
+.rank-result{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
