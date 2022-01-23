@@ -7,8 +7,9 @@ using PageRank.Core.Features.Search.SearchUrlPositions;
 
 namespace PageRank.Api.Controllers
 {
-    [Route("api/v1/pagerank")]
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class PageRankController : ControllerBase
     {
         private readonly IMediator _mediator;

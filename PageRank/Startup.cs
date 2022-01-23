@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,6 +32,15 @@ namespace PageRank.Api
                         fv.RegisterValidatorsFromAssemblyContaining<SearchUrlPositionsParametersValidator>();
                     }
                 );
+            
+            services.AddApiVersioning(setup =>
+            {
+                setup.DefaultApiVersion = new ApiVersion(1, 0);
+                setup.AssumeDefaultVersionWhenUnspecified = true;
+                setup.ReportApiVersions = true;
+            });
+
+            services.AddSwaggerGen();
 
             services.AddMediatR(typeof(SearchUrlPositionsQuery));
             services.AddMemoryCache();
@@ -41,7 +51,7 @@ namespace PageRank.Api
                     corsBuilder
                         .AllowAnyHeader()
                         .AllowAnyMethod()
-                        .SetIsOriginAllowed(s => true)
+                        .SetIsOriginAllowed(_ => true)
                         .AllowCredentials();
                 });
             });
@@ -65,6 +75,13 @@ namespace PageRank.Api
                         await context.Response.WriteAsync("An unexpected fault happened. Try again later.");
                     });
                 });
+            
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
+            });
+            
             app.UseCors("CorsPolicy");
             app.UseRouting();
 
